@@ -1,9 +1,9 @@
 <?php
 
 	define('SERVERNAME', 'localhost');
-	define('USERNAE', 'root');
+	define('USERNAME', 'root');
 	define('PASSWORD', '');
-	define('DATABASE', 'am1a-fotsjaak);
+	define('DATABASE', 'am1a-fotosjaak');
 	date_default_timezone_set("Europe/Amsterdam");
 	
 	

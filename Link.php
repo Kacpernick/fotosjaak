@@ -44,6 +44,9 @@
 		}
 		?>
 		<li>
-	<a href = "index.php?Content=Idereen">Idereen</a>
+	<a href = "index.php?Content=class/MySqlDatabaseClass">db-test</a>
+	</li>
+	<li>
+	<a href = "index.php?Content=logintest">Login-test</a>
 	</li>
 </ul>
