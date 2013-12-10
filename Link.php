@@ -23,12 +23,32 @@
 						<a href = 'index.php?Content=wijzigingen'>Wijzigingen</a>
 						</li>";
 					break;
-					case 'admin':
+					
+					case 'administrator':
 					echo "<li>
 						<a href = 'index.php?Content=control'>Control</a>
 						</li>";
+						echo "<li>
+						<a href = 'index.php?Content=administrator_homepage'>User</a>
+						</li>";
 					break;
+					
 					case 'root':
+						echo "<li>
+						<a href = 'index.php?Content=root_homepage'>User</a>
+						</li>";
+					break;
+			
+						case 'developer':
+						echo "<li>
+						<a href = 'index.php?Content=developer_homepage'>User</a>
+						</li>";
+					break;
+						
+						case 'photographer':
+						echo "<li>
+						<a href = 'index.php?Content=photographer_homepage'>User</a>
+						</li>";
 					break;
 				}
 		}

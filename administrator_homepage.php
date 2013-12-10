@@ -1,5 +1,5 @@
 <?php 
-$userroot = array ('root','admin');
+$userroot = array ('root','administrator');
 include ("security.php");?>
 <h3>Admin page</h3>
 uw id is: <?php echo $_SESSION['id'];?><br>
