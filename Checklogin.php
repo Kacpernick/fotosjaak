@@ -1,46 +1,49 @@
 <?php
-	if (!empty($_POST['email']) && !empty($_POST['password']))
-	{
-		include('./connect_db.php');
-		$query = "SELECT *
-				  FROM `users`
-				  WHERE `email` = '".$_POST['email']."'
-				  AND `password` = '".$_POST['password']."'";
-		//echo $query;
-		$result = mysql_query($query, $db);
-		if (mysql_num_rows($result) > 0)
-		{
-			//echo "Record bestaat";
-			header("location:index.php?Content=Download");
-			$record = mysql_fetch_array ($result);
-			$_SESSION['id'] = $record['id'];
-			$_SESSION['userrole'] = $record['userrole'];
-			$_SESSION['firstname'] = $record['firstname'];
-			
-			switch ($record['userrole'])
-			{
-				case'root':
-						header("location:index.php?content=root_home");
-						break;
-				case'admin':
-						header("location:index.php?content=admin_home");
-						break;
-				case'customer':
-						header("location:index.php?content=customer_home");
-						break;
-			}
-			
-			
-		}
-		else
-		{
-			echo 'E-mail adres is niet bekend';
-			header("refresh:4;url=index.php?Content=login_form");
-		}
-	}
-	else
-	{
-		echo 'Een van de velden is niet ingevuld';
-		header("refresh:4;url=index.php?Content=login_form");
-	}
+        // Als je methoden uit de LoginClass wilt gebruiken
+        //  dan moet je deze class eerst toevoegen met require_once
+        require_once("class/LoginClass.php");
+        
+        //Check of beide velden zijn ingevoerd        
+        if ( !empty($_POST['email']) && !empty($_POST['password']))
+        {
+                        
+                if (LoginClass::check_if_email_password_exists($_POST['email'],
+                                                               $_POST['password']))
+                {
+                        //echo "De combinatie bestaat";exit();        
+                        //Verwijs door naar de homepage van de geregistreerde gebruiker
+                        //echo "Record bestaat in de database";
+                        $user_object = LoginClass::find_user_by_email_password($_POST['email'],$_POST['password']);
+                        
+						
+                        $_SESSION['id'] = $user_object->get_id();
+                        $_SESSION['userrole'] = $user_object->get_userrole();
+                        
+                        switch ($_SESSION['userrole'])
+                        {
+                                case 'root':
+                                        header("location:index.php?content=root_homepage");
+                                break;
+                                case 'admin':
+                                        header("location:index.php?content=admin_homepage");                        
+                                break;
+                                case 'customer':
+                                        header("location:index.php?content=customer_homepage");
+                                break;                        
+                        }
+                }
+                else
+                {
+                        //Blijkbaar is het record niet gevonden in de database
+                        echo "De ingevoerde combinatie van gebruikersnaam - wachtwoord is ons niet bekend. U wordt doorgestuurd naar de inlogpagina";
+                        header("refresh:4; url=index.php?content=login_form");
+                }                
+        }
+        else
+        {
+                echo 'U heeft beide of een van beide velden niet ingevuld. 
+                          U wordt doorgestuurd naar de inlogpagina';
+                header("refresh:4;url=index.php?content=login_form");
+        }
+
 ?>
