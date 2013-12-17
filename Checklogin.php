@@ -11,6 +11,9 @@
                 if (LoginClass::check_if_email_password_exists($_POST['email'],
                                                                $_POST['password']))
                 {
+                	if (LoginClass::check_if_account_is_activated($_POST['email'],
+                                                               $_POST['password']))
+															   {}
                         //echo "De combinatie bestaat";exit();        
                         //Verwijs door naar de homepage van de geregistreerde gebruiker
                         //echo "Record bestaat in de database";

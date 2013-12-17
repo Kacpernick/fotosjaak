@@ -118,6 +118,27 @@
                         $loginClassObjectInArray = self::find_by_sql($query);        
                         $loginClassObject = array_shift($loginClassObjectInArray);
                         return $loginClassObject;
-                }
+				}
+						
+						public static function check_if_account_is_activated($email, $password)
+						{
+							$query = "SELECT * 
+                                          FROM `login`
+                                          WHERE `email` = '".$email."'
+                                          AND `password` = '".$password."'";
+										  
+										  
+										  $object_array = self::find_by_sql($query);
+										  $loginClassObject = array_shift($object_array);
+										  if($loginClassObject->activated == 'yes')
+										  {
+										  	return true;
+										  }
+								else 
+									{
+										return false;
+									}
+						}
+                
         }
 ?>
