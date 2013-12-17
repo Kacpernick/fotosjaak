@@ -1,5 +1,5 @@
 
-<form action = "index.php?Content=Register" method = "post">
+<form action = "index.php?Content=Register" method = "post"/>
 <Table border = "0">
 <tr>
 <td>
@@ -8,7 +8,7 @@ Voornaam
 </tr>
 <tr>
 <td>
-<input type = "text" name = "firstname">
+<input type = "text" name = "firstname"/>
 </td>
 </tr>
 
@@ -19,7 +19,7 @@ Tussenvoegsel
 </tr>
 <tr>
 <td>
-<input type = "text" name = "infix">
+<input type = "text" name = "infix"/>
 </td>
 </tr>
 
@@ -30,7 +30,7 @@ Achternaam
 </tr>
 <tr>
 <td>
-<input type = "text" name = "surname">
+<input type = "text" name = "surname"/>
 </td>
 </tr>
 
@@ -41,8 +41,8 @@ Straat + Huisnummer
 </tr>
 <tr>
 <td>
-<input type = "text" name = "street">
-<input type = "number" name = "house_number" min = "0" max = "18923">
+<input type = "text" name = "address"/>
+<input type = "number" name = "addressnumber" min = "0" max = "18923"/>
 </td>
 </tr>
 
@@ -53,7 +53,7 @@ Woonplats
 </tr>
 <tr>
 <td>
-<input type = "text" name = "city">
+<input type = "text" name = "city"/>
 </td>
 </tr>
 
@@ -64,94 +64,38 @@ Postcode
 </tr>
 <tr>
 <td>
-<input type = "text" name = "zip_code">
+<input type = "text" name = "zipcode"/>
+</td>
+</tr>
+
+Land
+</td>
+</tr>
+<tr>
+<td>
+<input type = "text" name = "country"/>
 </td>
 </tr>
 
 <tr>
 <td>
-Gebortedatum
+Telefoonnummer
 </td>
 </tr>
 <tr>
 <td>
-<input type = "date" name = "birthday" min = "1887-01-01" max = "<?php echo Date('y-m-d') ?>" required/>
-</td>
-</tr>
-
-<tr>
-<td>
-Geslacht
-</td>
-</tr>
-<tr>
-<td>
-<input type = "radio" name = "sex" value = "male">Man
-<input type = "radio" name = "sex"  value = "female">Vrouw
+<input type = "text" name = "telephonenumber">
 </td>
 </tr>
 
 <tr>
 <td>
-Burgelijke stat
+Mobiele nummer
 </td>
 </tr>
 <tr>
 <td>
-<input type = "radio" name = "marital_status" value = "married" required>Getrouwd
-<input type = "radio" name = "marital_status" value = "single" required>Niet getrouwd
-</td>
-</tr>
-
-<tr>
-<td>
-Favoriete gamesoort
-</td>
-</tr>
-<tr>
-<td>
-
-	<select name = "favo_genre">	
-		<option value = "not_selected">-----</option>
-		<option value = "Action">Action</option>
-		<option value = "Race">Race</option>
-		<option value = "RPG">RPG</option>
-		<option value = "Strategy">Strategie</option>
-	</select>
-
-</td>
-</tr>
-
-<tr>
-<td>
-Favorite spel
-</td>
-</tr>
-<tr>
-<td>
-<input type = "text" name = "favo_game">
-</td>
-</tr>
-
-<tr>
-<td>
-E-mail
-</td>
-</tr>
-<tr>
-<td>
-<input type = "email" name = "email">
-</td>
-</tr>
-
-<tr>
-<td>
-Wactwoord
-</td>
-</tr>
-<tr>
-<td>
-<input type = "password" name = "password">
+<input type = "text" name = "mobilephonenumber">
 </td>
 </tr>
 

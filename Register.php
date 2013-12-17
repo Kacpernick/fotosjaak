@@ -1,4 +1,17 @@
 <?php
+		require_once ("class/LoginClass.php");
+		
+		if (LoginClass::chack_if_email_exists())
+		{
+			echo "het email adres bestaat al";
+			header("refresh:5;url=index.php?content=Register_form");
+			exit();
+		}
+		
+		else 
+		{
+			echo "het is u gelukt";	
+		}
         //var_dump($_POST);
         
         //Hier wordt contact gemaakt met de mysql-server

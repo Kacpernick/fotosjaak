@@ -140,5 +140,22 @@
 									}
 						}
                 
+				public static function check_if_email_exists($email)
+				{
+					$query = "SELECT *
+								FROM	 `login`
+								WHERE	`email` = '".$email."'";
+							$result = $database->fire_query($query);
+							if (mysql_num_rows($result) > 0)
+							{
+								return true;
+							}
+							else 
+							{
+								return false;
+							}
+							//return (mysql_num_rows($result) > 0)? true : false;
+				}
+				
         }
 ?>
