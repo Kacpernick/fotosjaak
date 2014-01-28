@@ -44,7 +44,17 @@
 					echo "<li>
 							<a href=''>pho-link</a>
 						  </li>";
-				break;				
+				break;	
+					
+				case 'coworker':
+						  echo "<li>
+							<a href='index.php?content=coworker_homepage'>user home</a>					
+						  </li>"; 
+						  
+						  echo "<li>
+							<a href='index.php?content=coworker'>pandabeer</a>					
+						  </li>";
+				break;		
 			}
 		}
 		else

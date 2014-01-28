@@ -1,7 +1,7 @@
 <?php 
 	require_once("class/OrderClass.php");
 	
-	$userrole = array('customer', 'root', 'admin');
+	$userrole = array('coworker', 'root', 'admin');
 	include("security.php"); 
 
 	if ( isset($_POST['submit']))
