@@ -1,9 +1,9 @@
-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 28 jan 2014 om 07:49
+-- Genereertijd: 24 jan 2014 om 08:12
 -- Serverversie: 5.6.12-log
 -- PHP-versie: 5.4.12
 
@@ -59,14 +59,35 @@ CREATE TABLE IF NOT EXISTS `login` (
   `activated` enum('yes','no') NOT NULL DEFAULT 'no',
   `activationdate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `login`
 --
 
 INSERT INTO `login` (`id`, `email`, `password`, `userrole`, `activated`, `activationdate`) VALUES
-
+(1, 'customer@gmail.com', 'geheim', 'customer', 'yes', '2013-12-02 00:00:00'),
+(2, 'administrator@gmail.com', 'geheim', 'administrator', 'yes', '2013-12-03 08:16:00'),
+(3, 'root@gmail.com', 'geheim', 'root', 'yes', '2013-12-04 00:00:00'),
+(4, 'photographer@gmail.com', 'geheim', 'photographer', 'yes', '2013-12-05 12:20:28'),
+(5, 'developer@gmail.com', 'geheim', 'developer', 'yes', '2013-12-15 00:00:00'),
+(7, 'test@gmail.com', '661158d4d980b98127ab39f05efb7e7c', 'customer', 'no', '2013-12-17 11:23:25'),
+(8, 'testerdetest@gmail.com', '89df6f6de76f009cceccde15d99bf259', 'customer', 'no', '2013-12-17 11:27:07'),
+(9, 'adruijter@gmail.com', 'f3d0748be605f132def8cedcd881e8e7', 'customer', 'no', '2014-01-06 14:57:28'),
+(10, 'adruijter1968@gmail.com', 'c92e8bc968a43dfbe64bab342e214bc3', 'customer', 'no', '2014-01-06 14:59:33'),
+(11, 'adruijter321@gmail.com', '00084830abf12ba71480c11da8aa1ab7', 'customer', 'no', '2014-01-06 15:19:26'),
+(12, 'adruijter678@gmail.com', '5df80f3ef6b23d3931e0fff9f92a6a59', 'customer', 'no', '2014-01-06 15:36:34'),
+(13, 'adruijter324@gmail.com', 'e5f313bf90045889c6935f2d0af8bb0c', 'customer', 'no', '2014-01-06 16:00:35'),
+(14, 'adruijter980@gmail.com', '6d76011c7a2c387a0a23dd02f46b2c8b', 'customer', 'no', '2014-01-06 16:08:26'),
+(15, 'adruijter90@gmail.com', '13d9ca1cbb291b44bf978e3cdcfc593f', 'customer', 'no', '2014-01-07 09:03:10'),
+(16, 'adruijter012@gmail.com', '3ad4607efd1d3f3a4bcaa0cc3a8d1c08', 'customer', 'no', '2014-01-07 09:25:31'),
+(17, 'adruijtert5@gmail.com', '0cf3f4ee5626eb1bfd4672330528439f', 'customer', 'no', '2014-01-07 09:27:55'),
+(18, 'adruijterjgt@gmail.com', '4c4b15e466762e2649716339ebadd667', 'customer', 'no', '2014-01-07 09:34:54'),
+(19, 'fhdhr@hf.nl', '7d466459bb038716796f16f9513f0886', 'customer', 'no', '2014-01-07 11:15:04'),
+(20, 'sdfkj@sdfj.nl', '4617f54ffd8bd0b031d1fc03f9adb155', 'customer', 'no', '2014-01-07 11:51:15'),
+(21, 'adruijter789@gmail.com', 'eeba6cf74c79698cae5cdd9124da1093', 'customer', 'no', '2014-01-13 14:45:34'),
+(22, 'amersfoort@gmail.com', 'geheim', 'customer', 'yes', '2014-01-13 15:29:31'),
+(23, 'rraq@gmail.com', 'geheim', 'customer', 'yes', '2014-01-14 08:49:07');
 
 -- --------------------------------------------------------
 
@@ -85,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   `number_of_pictures` int(11) NOT NULL,
   `confirmed` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `order`
@@ -117,8 +138,7 @@ INSERT INTO `order` (`order_id`, `user_id`, `order_short`, `order_long`, `delive
 (23, 1, 'De witte haai', 'Maak een foto van een witte mensenhaai die uit het water springt terwijl hij/zij een zeeleeuw in de bek heeft. Als het kan met salto en weinig bloed. Dit alles bij mooi weer.', '2014-01-29', '2014-01-29', 'black-white', 2147483647, 'no'),
 (24, 1, 'Vind de verschrikkelijke sneeuwman', 'Ga naar Tibet en vind de verschrikkelijke sneeuwman. Meet zijn voetafdruk op.', '2014-01-29', '2014-01-31', 'black-white', 104484848, 'no'),
 (25, 1, 'Het noorderlicht', 'Ga naar het noordelijkste puntje van Zweden en maak fotos van het noorderlicht. Veel blauw en rood fotograferen.', '2014-01-23', '2014-01-31', 'color', 2147483647, 'no'),
-(26, 1, 'De commodovaraan in indonesie', 'Fotografeer een commodovaraan die een geit vastgebonden aan een paal opeet.  ', '2014-01-23', '2014-01-31', 'black-white', 10, 'yes'),
-(27, 25, 'sdfj', 'd;slfk', '2014-01-30', '2014-01-30', 'black-white', 1009, 'yes');
+(26, 1, 'De commodovaraan in indonesie', 'Fotografeer een commodovaraan die een geit vastgebonden aan een paal opeet.  ', '2014-01-23', '2014-01-31', 'black-white', 10, 'yes');
 
 -- --------------------------------------------------------
 
@@ -146,6 +166,21 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `infix`, `surname`, `address`, `addressnumber`, `city`, `zipcode`, `country`, `telephonenumber`, `mobilephonenumber`) VALUES
+(1, 'Arjan', 'de', 'Ruijter', 'Prins Hedrikstraat', '17', 'Den Haag', '1901CB', 'Nederland', '0123456789', '9876543210'),
+(10, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '12', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(11, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '34', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(12, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '12', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(13, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '89', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(14, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '436', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(15, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '45', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(16, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '567', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(17, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '9393', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(18, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '5757', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(19, '', '', '', '', '', '', '', '', '', ''),
+(20, '', '', '', '', '', '', '', '', '', ''),
+(21, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '17', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420'),
+(22, 'Michel', 'van', 'Amersfoort', 'Hoog Catherijne', '1045', 'Utrecht', '1234AB', 'Nederland', '0251234156', '0634912345'),
+(23, 'Arjan', 'de', 'Ruijter', 'Prins Hendrikstraat', '167', 'Castricum', '1901CB', 'Noord-Holland', '3125167420', '3125167420');
 
 -- --------------------------------------------------------
 

@@ -29,19 +29,21 @@ USE `am1a-fotosjaak`;
 --
 
 CREATE TABLE IF NOT EXISTS `faq` (
-  `id` int(11) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `question_english` text NOT NULL,
   `question_dutch` text NOT NULL,
   `answer_english` text NOT NULL,
-  `answer_dutch` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `answer_dutch` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `faq`
 --
 
 INSERT INTO `faq` (`id`, `question_english`, `question_dutch`, `answer_english`, `answer_dutch`) VALUES
-(0, 'is this game to hard?', 'is deze  spel te moeilijk?', '', '');
+(1, 'Is this game hard to play?', 'Is dit een moeilijk spel om te spelen?', 'Yes, this game is very hard to crack.', 'Ja, dit spel is mega moeilijk.'),
+(2, 'When is this game completed?', 'Wanneer heb je dit spel uitgespeeld?', 'The game is a never ending experience. Full of joy and pleasure.', 'De game komt nooit ten einde. Het maakt je tot een beter en gelukkiger mens.');
 
 -- --------------------------------------------------------
 
@@ -53,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `login` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(200) NOT NULL,
   `password` varchar(12) NOT NULL,
-  `userrole` enum('customer','root','administrator','photographer') NOT NULL DEFAULT 'customer',
+  `userrole` enum('customer','root','administrator','photographer','developer') NOT NULL DEFAULT 'customer',
   `activated` enum('yes','no') NOT NULL DEFAULT 'no',
   `activationdate` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -66,19 +68,19 @@ CREATE TABLE IF NOT EXISTS `login` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(100) NOT NULL,
-  `infix` varchar(20) NOT NULL,
+  `id` int(10) unsigned NOT NULL,
+  `firstname` varchar(200) NOT NULL,
+  `infix` varchar(50) NOT NULL,
   `surname` varchar(200) NOT NULL,
-  `address` varchar(300) NOT NULL,
+  `address` varchar(200) NOT NULL,
   `addressnumber` varchar(10) NOT NULL,
-  `city` varchar(300) NOT NULL,
+  `city` varchar(200) NOT NULL,
   `zipcode` varchar(6) NOT NULL,
-  `country` varchar(200) NOT NULL,
+  `country` varchar(300) NOT NULL,
   `telephonenumber` varchar(10) NOT NULL,
   `mobilephonenumber` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -98,20 +100,22 @@ CREATE TABLE IF NOT EXISTS `users` (
   `birthday` date NOT NULL,
   `sex` enum('male','female') NOT NULL,
   `marital_status` enum('married','single') NOT NULL,
-  `favo_genre` enum('not_selected','Action','Race','RPG','Strategy') NOT NULL DEFAULT 'not_selected',
+  `favo_genre` enum('not_selected','rpg','adventure','horror','shooter','mmorpg','casual','educational','sport','simulation') NOT NULL DEFAULT 'not_selected',
   `favo_game` text NOT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   `userrole` enum('customer','admin','root') NOT NULL DEFAULT 'customer',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `users`
 --
 
 INSERT INTO `users` (`id`, `firstname`, `infix`, `surname`, `street`, `house_number`, `city`, `zip_code`, `birthday`, `sex`, `marital_status`, `favo_genre`, `favo_game`, `email`, `password`, `userrole`) VALUES
-(7, 'lol', '', 'lol', 'lol', 1, 'lol', 'lol', '2013-11-05', 'male', 'single', 'Race', 'lol', 'lol@hotmail.com', 'lol', 'customer');
+(39, 'Admin', 'de', 'Admin', 'Adminstraat', 17, 'Adminstraat', '1910CB', '1990-01-01', 'male', 'married', 'adventure', 'IloMilo', 'admin@gmail.com', 'geheim', 'customer'),
+(40, 'customer', 'de', 'customer', 'customerstraat', 17, 'Customerstad', '1910CB', '1990-01-01', 'male', 'married', 'horror', 'IloMilo', 'customer@gmail.com', 'geheim', 'customer'),
+(41, 'root', 'de', 'root', 'rootsstraat', 12, 'rootstad', '1901CB', '1990-01-01', 'male', 'married', 'shooter', 'IloMilo', 'root@gmail.com', 'geheim', 'customer');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

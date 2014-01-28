@@ -1,10 +1,10 @@
 <?php 
-	if (isset($_GET["Content"]))
+	if (isset($_GET["content"]))
 	{
-			include($_GET['Content'].".php");
+		include($_GET['content'].".php");
 	}
 	else
 	{
-		include ("Home.php");
+		include("homepage.php");
 	}
-?>
+?>	

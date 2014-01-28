@@ -1,9 +1,9 @@
-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 28 jan 2014 om 07:49
+-- Genereertijd: 03 dec 2013 om 09:46
 -- Serverversie: 5.6.12-log
 -- PHP-versie: 5.4.12
 
@@ -54,71 +54,23 @@ INSERT INTO `faq` (`id`, `question_english`, `question_dutch`, `answer_english`,
 CREATE TABLE IF NOT EXISTS `login` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(200) NOT NULL,
-  `password` varchar(32) NOT NULL,
+  `password` varchar(12) NOT NULL,
   `userrole` enum('customer','root','administrator','photographer','developer') NOT NULL DEFAULT 'customer',
   `activated` enum('yes','no') NOT NULL DEFAULT 'no',
   `activationdate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `login`
 --
 
 INSERT INTO `login` (`id`, `email`, `password`, `userrole`, `activated`, `activationdate`) VALUES
-
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `order`
---
-
-CREATE TABLE IF NOT EXISTS `order` (
-  `order_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(10) unsigned NOT NULL,
-  `order_short` text NOT NULL,
-  `order_long` text NOT NULL,
-  `deliverydate` date NOT NULL,
-  `eventdate` date NOT NULL,
-  `color` enum('color','black-white') NOT NULL DEFAULT 'color',
-  `number_of_pictures` int(11) NOT NULL,
-  `confirmed` enum('yes','no') NOT NULL DEFAULT 'no',
-  PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
-
---
--- Gegevens worden uitgevoerd voor tabel `order`
---
-
-INSERT INTO `order` (`order_id`, `user_id`, `order_short`, `order_long`, `deliverydate`, `eventdate`, `color`, `number_of_pictures`, `confirmed`) VALUES
-(1, 0, 'De lemmingen Noorwegen', 'Graag een aantal fotos van de lemmingen in Noorwegen', '2014-01-15', '2014-01-24', 'black-white', 2147483647, 'no'),
-(2, 0, 'dfklj', 'sdlkjf', '2014-11-29', '2014-11-30', 'black-white', 17, 'no'),
-(3, 0, 'De goudgerande mestkever', 'Fotografeer de goudgerande mestkever terwijl hij slaapt', '2014-01-29', '2014-01-31', 'black-white', 2147483647, 'no'),
-(4, 1, 'gggggggggg', 'aaaaaaaaaaaaaaa', '2014-01-21', '2014-01-23', 'black-white', 10090909, 'no'),
-(5, 1, 'mmmmmm', 'mmmmmmmmm', '2014-01-28', '2014-01-31', 'black-white', 10878787, 'no'),
-(6, 1, 'mmmmmm', 'mmmmmmmmm', '2014-01-28', '2014-01-31', 'black-white', 10878787, 'no'),
-(7, 1, 'mmmmmm', 'mmmmmmmmm', '2014-01-28', '2014-01-31', 'black-white', 10878787, 'no'),
-(8, 1, 'mmmmmm', 'mmmmmmmmm', '2014-01-28', '2014-01-31', 'black-white', 10878787, 'no'),
-(9, 1, 'mmmmmm', 'mmmmmmmmm', '2014-01-28', '2014-01-31', 'black-white', 10878787, 'no'),
-(10, 1, 'mmmmmm', 'mmmmmmmmm', '2014-01-28', '2014-01-31', 'black-white', 10878787, 'no'),
-(11, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(12, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(13, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(14, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(15, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(16, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(17, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(18, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(19, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(20, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(21, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(22, 1, 'Zeeleeuwen in Californie', 'Zeeleeuw onder water', '2014-01-23', '2014-01-31', 'black-white', 2147483647, 'no'),
-(23, 1, 'De witte haai', 'Maak een foto van een witte mensenhaai die uit het water springt terwijl hij/zij een zeeleeuw in de bek heeft. Als het kan met salto en weinig bloed. Dit alles bij mooi weer.', '2014-01-29', '2014-01-29', 'black-white', 2147483647, 'no'),
-(24, 1, 'Vind de verschrikkelijke sneeuwman', 'Ga naar Tibet en vind de verschrikkelijke sneeuwman. Meet zijn voetafdruk op.', '2014-01-29', '2014-01-31', 'black-white', 104484848, 'no'),
-(25, 1, 'Het noorderlicht', 'Ga naar het noordelijkste puntje van Zweden en maak fotos van het noorderlicht. Veel blauw en rood fotograferen.', '2014-01-23', '2014-01-31', 'color', 2147483647, 'no'),
-(26, 1, 'De commodovaraan in indonesie', 'Fotografeer een commodovaraan die een geit vastgebonden aan een paal opeet.  ', '2014-01-23', '2014-01-31', 'black-white', 10, 'yes'),
-(27, 25, 'sdfj', 'd;slfk', '2014-01-30', '2014-01-30', 'black-white', 1009, 'yes');
+(1, 'customer@gmail.com', 'geheim', 'customer', 'no', '2013-12-02 00:00:00'),
+(2, 'administrator@gmail.com', 'geheim', 'administrator', 'no', '2013-12-03 08:16:00'),
+(3, 'root@gmail.com', 'geheim', 'root', 'no', '2013-12-04 00:00:00'),
+(4, 'photographer@gmail.com', 'geheim', 'customer', 'no', '2013-12-05 12:20:28'),
+(5, 'developer@gmail.com', 'geheim', 'developer', 'yes', '2013-12-15 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -140,12 +92,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `mobilephonenumber` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Gegevens worden uitgevoerd voor tabel `user`
---
-
-INSERT INTO `user` (`id`, `firstname`, `infix`, `surname`, `address`, `addressnumber`, `city`, `zipcode`, `country`, `telephonenumber`, `mobilephonenumber`) VALUES
 
 -- --------------------------------------------------------
 

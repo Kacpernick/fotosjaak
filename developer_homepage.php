@@ -1,6 +1,6 @@
 <?php 
-        $userrole = array('developer', 'root', 'admin');
-        include("security.php"); 
+	$userrole = array('root', 'developer');
+	include("security.php"); 
 ?>
 <h3>Developer homepage</h3>
 Uw id is: <?php echo $_SESSION['id']; ?><br>
