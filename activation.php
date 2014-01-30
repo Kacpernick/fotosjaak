@@ -1,4 +1,4 @@
-<?php
+<?php // hier word het gekeken naar de geactivate accounts
 require_once("class/LoginClass.php");
 
 if (isset($_POST['submit']))
