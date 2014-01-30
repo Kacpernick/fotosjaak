@@ -2,7 +2,7 @@
 	<li>
 		<a href="index.php?content=homepage">home</a>
 	</li>
-	<?php // dat is de link clase
+	<?php // dat is de link clase hier zie je de links naar ale paginas
 		if (isset($_SESSION['userrole']))
 		{
 			echo "<li>
