@@ -1,4 +1,4 @@
-<?php 
+<?php // de coworker Homepage met de rechten voor 'coworker', 'root', 'admin'
 	$userrole = array('coworker', 'root', 'admin');
 	include("security.php"); 
 ?>
