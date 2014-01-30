@@ -1,4 +1,4 @@
-<?php
+<?php // dat is de clase genamd MySqlDatabase
 	require_once 'config/config.php';
 
 	class MySqlDatabaseClass
