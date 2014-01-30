@@ -1,7 +1,7 @@
 <?php
 class OrderClass
 {
-	//Fields
+	//Fields van de clase OrderClass
 	private $order_id;
 	private $order_short;
 	private $order_long;
