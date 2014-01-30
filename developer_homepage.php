@@ -1,4 +1,4 @@
-<?php //Dat is de home page van de developer
+<?php //Dat is de home page van de developer met de rechten van 'root', 'developer'
 	$userrole = array('root', 'developer');
 	include("security.php"); 
 ?>
