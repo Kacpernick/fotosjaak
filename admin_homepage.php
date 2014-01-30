@@ -1,4 +1,4 @@
-<?php 
+<?php //Dat is de home page van de admin
 	$userrole = array('root', 'administrator');
 	include("security.php"); 
 ?>
