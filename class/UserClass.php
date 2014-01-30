@@ -1,4 +1,4 @@
-<?php
+<?php // Dat is de User clase
  require_once("MySqlDatabaseClass.php");
 
  class UserClass
