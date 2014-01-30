@@ -1,4 +1,4 @@
-<?php
+<?php //hier word het gekeken naar de inlog dingen
 	require_once("class/LoginClass.php");
 	
 	if (LoginClass::check_if_email_exists($_POST['email']))
