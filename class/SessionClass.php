@@ -1,4 +1,4 @@
-<?php
+<?php // dat is de session class
 	class SessionClass
 	{
 		//Fields
