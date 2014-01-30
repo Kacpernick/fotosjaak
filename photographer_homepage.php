@@ -1,4 +1,4 @@
-<?php 
+<?php //Dat is de home page van de photographer
 	$userrole = array('root', 'photographer');
 	include("security.php"); 
 ?>
