@@ -228,7 +228,7 @@
 			$message .= "Sjaak de Vries<br>";
 			$message .= "Uw fotograaf";	
 			
-			// hier worden de mailtjes verstuurd
+			// hier worden de mailtjes verstuurd en hier kan je ook de mailtjes bewerken
 			$message2 = "<p><u>Geachte heer/mevrouw <b>".
 					   $post_array['firstname']." ".
 					   $post_array['infix']." ".
